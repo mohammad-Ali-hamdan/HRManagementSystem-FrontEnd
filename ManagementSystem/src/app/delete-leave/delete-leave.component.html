@@ -1,0 +1,30 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- The Modal -->
+
+
+  <div class="modal basicFont" id="DeleteModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Delete </h4>
+          <button type="button" class="btn-close" (click) = "closeDeletePopUp()" data-bs-dismiss="modal"></button>
+        </div>
+
+        <!-- Modal body -->
+        <div class="modal-body">
+          <p>Are you sure you want to delete?</p>
+        </div>
+
+
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" (click)="deleteLeave()">Yes</button>
+          <button type="button" class="btn btn-danger" (click) = "closeDeletePopUp()" data-bs-dismiss="modal">NO</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+

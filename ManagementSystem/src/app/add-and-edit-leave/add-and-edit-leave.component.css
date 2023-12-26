@@ -1,0 +1,23 @@
+.fontBasic{
+  font-size: small;
+}
+.lbl{
+  width: 100px;
+  margin-right: 40px;
+  font-size: small;
+}
+.fields{
+  width:100px;
+}
+
+
+#check{
+  padding: 10px;
+  color:red;
+  font-weight: bold;
+}
+#checkNumberofDays{
+  color:red;
+  font-weight: bold;
+  font-size: x-small;
+}

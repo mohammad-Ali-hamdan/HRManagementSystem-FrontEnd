@@ -1,0 +1,52 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- The Modal -->
+<div class="modal" id="AddModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">{{functionality}} Employee</h4>
+        <button type="button" class="btn-close" (click) = "closeAddPopUp()" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div>
+          <label class="lbl" for="name">Name</label>
+          <input class="fields" id = "name" [(ngModel)]="newEmployee.name">
+        </div>
+        <div>
+          <label class="lbl" for="email">Email </label>
+          <input type="email" class="fields" id = "email" [(ngModel)]="newEmployee.email">
+        </div>
+        <div>
+          <label class="lbl" for="address">Address</label>
+          <input class="fields" id = "address" [(ngModel)]="newEmployee.address">
+        </div>
+        <div>
+          <label class="lbl" for="Department">Department</label>
+          <select class="fields" id="Department" [(ngModel)]="DepartmentSelected">
+            <option></option>
+            <option *ngFor="let item of nameOfDepartments">{{ item }}</option>
+          </select>
+        </div>
+      </div>
+      <div *ngIf="checkFields" id="check">
+        <p>No Empty Fields allowed</p>
+        <p>Name must not include numbers</p>
+        <p>Email must be valid. eg: angular@gmail.com</p>
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="addOREditEmployee()">{{functionality}} Employee</button>
+        <button type="button" class="btn btn-danger" (click) = "closeAddPopUp(); close()" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>

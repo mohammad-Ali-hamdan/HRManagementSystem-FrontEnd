@@ -1,0 +1,97 @@
+.Leave{
+  display: flex;
+  justify-content: space-between;
+}
+.searchLeave{
+  float: left;
+
+  display: flex;
+  align-items: center;
+
+}
+
+
+.clearfloat{
+  clear:both;
+}
+.spacer{height: 20px;}
+
+#edit{
+  margin-right:  10px;
+}
+
+.basic{
+font-size: small;
+}
+body{
+
+
+}
+.lbl{
+  font-size: small;
+  padding-right: 10px;
+  padding-left: 10px;
+
+}
+.fields{
+  width:130px;
+  font-size: small;
+}
+.outset {
+  border-style: outset;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.paginated{
+
+  margin-left: 10px;
+  font-size: small;
+  height: 4px;
+
+}
+#PageSize{
+  width:40px;
+
+}
+
+#SearchBoxleft{
+  /*display: flex;*/
+  /*align-items: center;*/
+  float: left;
+  width:1000px;
+
+
+}
+#SearchBoxRight{
+  float: right;
+  margin: 15px;
+
+
+}
+.AddLeavebtn{
+  width: 100px;
+}
+
+#pagesBtn{
+  display: flex;
+  gap: 4px;
+  font-weight: bold;
+  margin-bottom: 2px;
+
+
+}
+#page{
+
+  margin-left: 10px;
+
+}
+
+.itemsPerPage{
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 5px;
+
+}
+

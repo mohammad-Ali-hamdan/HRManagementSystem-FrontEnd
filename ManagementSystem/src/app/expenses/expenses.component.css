@@ -1,0 +1,49 @@
+.Emp{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:0;
+
+
+}
+.searchEmp{
+  float: left;
+}
+.AddEmpbtn{
+  float: right;
+
+
+}
+
+.clearfloat{
+  clear:both;
+}
+.spacer{height: 20px;}
+
+#edit{
+  margin-right:  10px;
+}
+
+.basic{
+  font-size: small;
+}
+#pagesBtn{
+  display: flex;
+  gap: 4px;
+  font-weight: bold;
+  margin-bottom: 2px;
+
+
+}
+#page{
+
+  margin-left: 10px;
+
+}
+.itemsPerPage{
+  padding-left: 4px;
+  padding-right: 4px;
+  margin: 5px;
+
+}
+

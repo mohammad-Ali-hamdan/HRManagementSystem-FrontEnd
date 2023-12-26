@@ -1,0 +1,16 @@
+
+.lbl{
+    width: 40px;
+    margin-right: 40px;
+    font-size: small;
+}
+.fields{
+    width:100px;
+}
+
+
+#check{
+  padding: 10px;
+  color:red;
+  font-weight: bold;
+}

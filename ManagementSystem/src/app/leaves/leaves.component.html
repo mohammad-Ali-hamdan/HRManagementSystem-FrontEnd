@@ -1,0 +1,95 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
+<div class="basic">
+  <div class="outset">
+    <div id="SearchBoxleft">
+      <div class="searchLeave">
+        <label class="lbl" for="leaveTye">Leave type</label>
+        <select class="fields" id="leaveTye" [(ngModel)]="selectedLeavetype" (change)="onSearchInputChange()" >
+          <option></option>
+          <option *ngFor="let leave of LeaveTypes"> {{leave.name}} </option>
+        </select>
+
+        <label class="lbl" for="Employee">Employee</label>
+        <input id="Employee" class = "searchEmp" type="search" placeholder="Search"  [(ngModel)]="searchText" (input)="onSearchInputChange()">
+
+
+        <label class="itemsPerPage" for="itemsPerPage">Items Per Page:</label>
+        <select id="itemsPerPage"  [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange()" >
+          <option value="5">5</option>
+          <option value="7">7</option>
+          <option value="8">8</option>
+          <option value="10" selected >10</option>
+          <option value="20">20</option>
+          <option value="50">50</option>
+        </select>
+        <div>
+          <ul class="pagination" id="pagesBtn">
+            <li style="padding-left: 5px" class="page-item"><button class="page-link" (click)="goToFirstPage()">|<</button></li>
+            <li class="page-item"><button class="page-link" (click)="goToPreviousPage()"><</button></li>
+            <li class="page-item"><button class="page-link" (click)="goToNextPage()">></button></li>
+            <li class="page-item"><button class="page-link" (click)="goToLastPage()">>|</button></li>
+          </ul>
+          <p id = "page">page : {{currentPageIndex}} of {{numberOfPages}}</p>
+        </div>
+
+      </div>
+
+
+
+
+    </div>
+
+    <div id="SearchBoxRight">
+      <button type="button" class="btn btn-primary AddLeavebtn" (click)="OnClickEditAdd('ADD' ,{id:0 , leavetype: 0 , from: '' , to : '',numberOfDays:0, note:'' ,employee:0  })" >+ Add Leave</button>
+    </div>
+
+  </div>
+
+
+  <div class="spacer clearfloat"></div>
+  <div class="clearfloat">
+    <table  class=" table table-bordered table-striped">
+      <thead>
+      <tr>
+
+        <th>leavetype</th>
+        <th>from</th>
+        <th>to</th>
+        <th>Number of days</th>
+        <th>note</th>
+        <th>employee</th>
+        <th>Edit - Delete </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let leave of result">
+
+        <td>{{ LeaveTypeById(leave.leavetype)}}</td>
+        <td>{{ leave.from }}</td>
+        <td>{{ leave.to }}</td>
+        <td>{{ leave.numberOfDays }}</td>
+        <td>{{ leave.note }}</td>
+        <td>{{ employeeById(leave.employee) }}</td>
+        <td>
+          <div id="edit" (click)="OnClickEditAdd('EDIT' ,leave )" class="glyphicon glyphicon-edit"></div>
+          <div id="trash" (click)="OnSelectTrash(leave.id)" class="trash glyphicon glyphicon-trash"></div>
+
+        </td>
+
+      </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+<app-delete-leave #DeleteModal (deleteEvent)="reload($event)" ></app-delete-leave>
+<app-add-and-edit-leave #AddEditModal (closeEvent)="reload($event)"></app-add-and-edit-leave>

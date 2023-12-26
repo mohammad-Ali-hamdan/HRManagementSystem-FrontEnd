@@ -1,0 +1,63 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- The Modal -->
+<div class="modal fontBasic" id="AddEditModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">{{functionality}} Leave</h4>
+        <button type="button" class="btn-close" (click) = "closePopUp()" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div>
+          <label class="lbl" for="leaveTyeUpdate">Leave type</label>
+          <select class="fields" id="leaveTyeUpdate" [(ngModel)]="selectedLeavetype" >
+            <option></option>
+            <option *ngFor="let leave of LeaveTypes"> {{leave.name}} </option>
+          </select>
+        </div>
+        <div>
+          <label class="lbl" for="From">From </label>
+          <input type="date" class="fields" id = "From" (change)="calculateDays()" [(ngModel)]="leave.from">
+        </div>
+        <div>
+          <label class="lbl" for="To">To</label>
+          <input type="date" class="fields" id = "To" (change)="calculateDays()" [(ngModel)]="leave.to">
+        </div>
+        <div>
+          <label class="lbl" for="numberOfDays">Number of days</label>
+          <input class="fields" readonly id = "numberOfDays" [(ngModel)]="leave.numberOfDays">
+          <p *ngIf="!checkNumberofDays" id="checkNumberofDays">From Date Must Be before To Date</p>
+        </div>
+        <div>
+          <label class="lbl" for="note">Note</label>
+          <input class="fields" id = "note" [(ngModel)]="leave.note">
+        </div>
+
+        <label class="lbl" for="EmployeeUpdate">Employee</label>
+        <select class="fields" id="EmployeeUpdate" [(ngModel)]="selectedEmployee">
+          <option></option>
+          <option *ngFor="let employee of Employees"> {{employee.name}} </option>
+        </select>
+      </div>
+      <div  id="check" *ngIf="checkFields">
+        <p>No Empty Fields allowed</p>
+
+
+      </div>
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-primary" (click)="addOrEditLeave()">{{functionality}} Leave</button>
+        <button type="button" class="btn btn-danger" (click) = "closePopUp(); close()" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
