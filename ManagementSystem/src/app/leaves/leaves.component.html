@@ -19,25 +19,6 @@
         <input id="Employee" class = "searchEmp" type="search" placeholder="Search"  [(ngModel)]="searchText" (input)="onSearchInputChange()">
 
 
-        <label class="itemsPerPage" for="itemsPerPage">Items Per Page:</label>
-        <select id="itemsPerPage"  [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange()" >
-          <option value="5">5</option>
-          <option value="7">7</option>
-          <option value="8">8</option>
-          <option value="10" selected >10</option>
-          <option value="20">20</option>
-          <option value="50">50</option>
-        </select>
-        <div>
-          <ul class="pagination" id="pagesBtn">
-            <li style="padding-left: 5px" class="page-item"><button class="page-link" (click)="goToFirstPage()">|<</button></li>
-            <li class="page-item"><button class="page-link" (click)="goToPreviousPage()"><</button></li>
-            <li class="page-item"><button class="page-link" (click)="goToNextPage()">></button></li>
-            <li class="page-item"><button class="page-link" (click)="goToLastPage()">>|</button></li>
-          </ul>
-          <p id = "page">page : {{currentPageIndex}} of {{numberOfPages}}</p>
-        </div>
-
       </div>
 
 
@@ -86,6 +67,24 @@
       </tbody>
     </table>
 
+    <div class="paginationDiv">
+      <label class="itemsPerPage" for="itemsPerPage">Items Per Page:</label>
+      <select id="itemsPerPage"  [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange()" >
+        <option value="5" selected>5</option>
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
+
+      <ul class="pagination" id="pagesBtn">
+        <li style="padding-left: 5px"  class="page-item"><button class="page-link" (click)="goToFirstPage()">|<</button></li>
+        <li class="page-item"><button class="page-link" (click)="goToPreviousPage()"><</button></li>
+        <li class="page-item"><button class="page-link" (click)="goToNextPage()">></button></li>
+        <li class="page-item"><button class="page-link" (click)="goToLastPage()">>|</button></li>
+      </ul>
+      <p style="padding-left: 5px" >page : {{currentPageIndex}} of {{numberOfPages}}</p>
+
+    </div>
   </div>
 </div>
 

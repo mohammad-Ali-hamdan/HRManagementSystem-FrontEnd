@@ -1,0 +1,83 @@
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<!-- The Modal -->
+<div class="modal fontBasic" id="AddModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title"> Expense Entry</h4>
+        <button type="button" class="btn-close" (click) = "closePopUp()" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+        <div>
+          <label>Employee</label>
+          <select class="fields" id="EmployeeUpdate" [(ngModel)]="selectedEmployee">
+            <option></option>
+            <option *ngFor="let employee of employees"> {{employee.name}} </option>
+          </select>
+          <label>Status</label>
+          <input type="text"  [(ngModel)]="status" placeholder="status" >
+
+        </div>
+
+        <table  class=" table table-bordered table-striped">
+          <thead>
+          <tr>
+
+            <th>Expense Type</th>
+            <th>date</th>
+            <th>Description</th>
+            <th>Total</th>
+            <th>Save</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+            <td>
+              <select  [(ngModel)]="expenseType"  >
+                <option></option>
+                <option *ngFor="let expense of expenseTypes"> {{expense.name}} </option>
+              </select>
+            </td>
+
+            <td><input type="date" class="form-control" [(ngModel)]="expenseDate"></td>
+            <td><input type="text" class="form-control" [(ngModel)]="expenseDescription"></td>
+            <td><input type="text" class="form-control" [(ngModel)]="expenseTotal"></td>
+            <td><div class="glyphicon glyphicon-save" (click)="addExpenseEntry()"></div></td>
+          </tr>
+          </tbody>
+        </table>
+        <div *ngIf="checkFields"  style="color: red" >Please fill in all fields with valid data ; Total must be greater than 0.0</div>
+
+
+        <div>
+          <h5>Expense List:</h5>
+          <ul>
+            <li *ngFor="let expense of expensesEntry">
+              Date: {{ expense.date }}, Description: {{ expense.description }}, Total: {{ expense.total }}
+            </li>
+          </ul>
+        </div>
+        <div  id="check" style="color: red" *ngIf="checkBeforeSubmit">
+          <p> Expenses list, Employee and Status are required</p>
+        </div>
+      </div>
+
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+
+        <button type="button" class="btn btn-primary" (click)="submitExpense()"> Submit Expense</button>
+        <button type="button" class="btn btn-danger" (click) = "closePopUp(); close()" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+
+
+</div>
+
+

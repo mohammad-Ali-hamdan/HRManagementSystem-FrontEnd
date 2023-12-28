@@ -1,15 +1,24 @@
 .Emp{
+  /*display: flex;*/
+  /*justify-content: space-between;*/
+  /*align-items: center;*/
+  /*margin:0;*/
+  border-style: outset;
+  height: 90px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin:0;
+
+  margin: 0 auto;
 
 
 }
 .searchEmp{
   float: left;
+  margin-left: 10px;
 }
 .AddEmpbtn{
+
   float: right;
 
 
@@ -31,7 +40,7 @@
   display: flex;
   gap: 4px;
   font-weight: bold;
-  margin-bottom: 2px;
+
 
 
 }
@@ -47,3 +56,10 @@
 
 }
 
+.paginationDiv{
+  display: flex;
+  justify-content: center;
+  height: 20px;
+  align-items: center;
+  margin: 0 auto;
+}

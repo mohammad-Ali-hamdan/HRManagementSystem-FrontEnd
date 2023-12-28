@@ -17,7 +17,8 @@
   <div class="border-end bg-white" id="sidebar-wrapper"  *ngIf="isToggled">
     <div class="sidebar-heading border-bottom bg-light">Start Bootstrap</div>
     <div class="list-group list-group-flush"  *ngFor="let item of items">
-      <a class="list-group-item list-group-item-action list-group-item-light p-3"  (click)="OnSelect(item)">{{item}}</a>
+<!--      <a class="list-group-item list-group-item-action list-group-item-light p-3"  (click)="OnSelect(item)">{{item}}</a>-->
+      <a class="list-group-item list-group-item-action list-group-item-light p-3"   routerLink="{{item}}" >{{item}}</a>
     </div>
   </div>
   <div>
@@ -50,8 +51,11 @@
       </div>
     </nav>
     <!-- Page content-->
+
     <div class="container-fluid">
-      <app-content-componant [itemSelected]="itemSelected"></app-content-componant>
+      <router-outlet></router-outlet>
+<!--      <a routerLink="/employees">s</a>-->
+<!--      <app-content-componant [itemSelected]="itemSelected"></app-content-componant>-->
 
     </div>
   </div>

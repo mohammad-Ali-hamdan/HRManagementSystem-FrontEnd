@@ -1,3 +1,3 @@
 export const  listOfitems:string[]=[
-  "Employees" ,  "Leaves" ,"Expenses"
+  "employees" ,  "leaves" ,"expenses"
 ];

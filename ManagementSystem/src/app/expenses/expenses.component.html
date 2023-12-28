@@ -6,27 +6,9 @@
 <div class="basic">
   <div class="Emp">
     <input class = "searchEmp" type="search" placeholder="Search"  [(ngModel)]="searchText" (input)="onSearchInputChange()">
-    <div>
-      <label class="itemsPerPage" for="itemsPerPage">Items Per Page:</label>
-      <select id="itemsPerPage"  [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange()" >
-        <option value="5">5</option>
-        <option value="7">7</option>
-        <option value="8">8</option>
-        <option value="10" selected >10</option>
-        <option value="20">20</option>
-        <option value="50">50</option>
-      </select>
 
-      <ul class="pagination" id="pagesBtn">
-        <li style="padding-left: 5px" class="page-item"><button class="page-link" (click)="goToFirstPage()">|<</button></li>
-        <li class="page-item"><button class="page-link" (click)="goToPreviousPage()"><</button></li>
-        <li class="page-item"><button class="page-link" (click)="goToNextPage()">></button></li>
-        <li class="page-item"><button class="page-link" (click)="goToLastPage()">>|</button></li>
-      </ul>
-      <p id = "page">page : {{currentPageIndex}} of {{numberOfPages}}</p>
-    </div>
 
-    <button class = "AddEmpbtn" type="button" class="btn btn-primary" (click)="OnClickAddEdit('ADD' , expenseNull)">+ Add Expense</button>
+    <button class = "AddEmpbtn" type="button" class="btn btn-primary" (click)="OnClickAdd('ADD' , expenseNull)">+ Add Expense</button>
 
 
   </div>
@@ -41,7 +23,7 @@
         <th>Description</th>
         <th>Status</th>
         <th>Total</th>
-        <th> Edit - Delete - Details</th>
+        <th> Details</th>
       </tr>
       </thead>
       <tbody>
@@ -54,23 +36,37 @@
         <td>{{ expense.total }}</td>
 
         <td>
-          <a href="#">
+          <a routerLink="/details/{{expense.id}}">
             <span class="glyphicon glyphicon-open-file"></span>
           </a>
-          <div id="edit" (click)="OnClickAddEdit('EDIT' , expense)" class="glyphicon glyphicon-edit"></div>
-          <div id="trash" (click)="OnSelectTrash(expense.id)" class="trash glyphicon glyphicon-trash"></div>
+<!--          <div id="edit" (click)="OnClickAddEdit('EDIT' , expense)" class="glyphicon glyphicon-edit"></div>-->
+<!--          <div id="trash" (click)="OnSelectTrash(expense.id)" class="trash glyphicon glyphicon-trash"></div>-->
 
         </td>
       </tr>
       </tbody>
     </table>
+    <div class="paginationDiv">
+      <label class="itemsPerPage" for="itemsPerPage">Items Per Page:</label>
+      <select id="itemsPerPage"  [(ngModel)]="itemsPerPage" (change)="onItemsPerPageChange()" >
+        <option value="5" selected>5</option>
+        <option value="10" >10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+      </select>
 
+      <ul class="pagination" id="pagesBtn">
+        <li style="padding-left: 5px" class="page-item"><button class="page-link" (click)="goToFirstPage()">|<</button></li>
+        <li class="page-item"><button class="page-link" (click)="goToPreviousPage()"><</button></li>
+        <li class="page-item"><button class="page-link" (click)="goToNextPage()">></button></li>
+        <li class="page-item"><button class="page-link" (click)="goToLastPage()">>|</button></li>
+      </ul>
+      <p style="padding-left: 5px">page : {{currentPageIndex}} of {{numberOfPages}}</p>
+    </div>
   </div>
 
-  <!-- add employee pop up -->
-<!--  <app-add-employee-modal #AddModal  (closeEvent)="reload($event)" ></app-add-employee-modal>-->
-<!--  <app-delete-employee #DeleteModal  (deleteEvent)="reload($event)" ></app-delete-employee>-->
-<!--  <app-expense-details [expenseClaimId]="expense.id"></app-expense-details>-->
+  <app-add-expense #AddExpense (closeEvent)="reload($event)"></app-add-expense>
+
 
 </div>
 

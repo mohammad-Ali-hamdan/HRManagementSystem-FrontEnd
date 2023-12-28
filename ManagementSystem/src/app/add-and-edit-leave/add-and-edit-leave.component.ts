@@ -17,8 +17,8 @@ export class AddAndEditLeaveComponent implements OnInit{
    selectedLeavetype : string ="";
    selectedEmployee : string ="";
    checkFields = false;
-  checkNumberofDays: boolean = true;
-  @Output() closeEvent = new EventEmitter<boolean>();
+   checkNumberofDays: boolean = true;
+   @Output() closeEvent = new EventEmitter<boolean>();
   ngOnInit() {
     this.checkFields= false;
     this.checkNumberofDays = true;

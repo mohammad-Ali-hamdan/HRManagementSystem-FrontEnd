@@ -1,4 +1,4 @@
-import { Component , OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {expense} from "./expense";
 import {ExpenseService} from "../expense.service";
 import {pageable} from "./pageable";
@@ -6,6 +6,7 @@ import {Observable} from "rxjs";
 import {employee} from "../employees/employee";
 import {EmployeeServiceService} from "../employee-service.service";
 import {map} from "rxjs/operators";
+import {AddExpenseComponent} from "../add-expense/add-expense.component";
 
 @Component({
   selector: 'app-expenses',
@@ -14,7 +15,7 @@ import {map} from "rxjs/operators";
 })
 export class ExpensesComponent implements OnInit{
     searchText ="";
-    itemsPerPage:number=10;
+    itemsPerPage:number=5;
     currentPageIndex:number =0;
     numberOfPages:number =0;
     expenseNull :expense = {id : 0 , date : "" , description : "", total : 0 , status : "",  employeeId : 0 }
@@ -24,7 +25,7 @@ export class ExpensesComponent implements OnInit{
     employeeName!: Observable<any>;
     employees : employee[] =[];
     lengthFilteredExpense =0;
-
+    @ViewChild('AddExpense') AddPopUp !: AddExpenseComponent;
     constructor(private expenseService:ExpenseService , public employeeService : EmployeeServiceService) {
     }
     ngOnInit() {
@@ -119,17 +120,19 @@ export class ExpensesComponent implements OnInit{
 
 
     }
-    OnClickAddEdit(functionality:string  , expense:expense){
-   //this.getEmpById(1);
+  OnClickAdd(functionality:string  , expense:expense){
+    this.AddPopUp.openPopUp(functionality , expense);
 
     }
     OnSelectTrash(id:number){}
     reload(reload:boolean){
       if(reload){
-        this.searchText ="";
-        this.itemsPerPage = 10;
-        this.currentPageIndex = 0;
-        this.onSearchInputChange();
+          this.getAllEmployess();
+          this.getAllExpenses();
+          this.searchText ="";
+          this.itemsPerPage = 5;
+          this.currentPageIndex = 0;
+          this.onSearchInputChange();
     }}
 
 

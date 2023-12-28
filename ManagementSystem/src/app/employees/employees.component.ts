@@ -15,7 +15,7 @@ export class EmployeesComponent implements OnInit{
   result : employee [] = [];
   currentPageIndex = 0;
   numberOfPages=0;
-  itemsPerPage: number = 10;
+  itemsPerPage: number = 5;
   lengthFilteredEmployees :number =0;
   @ViewChild('AddModal') AddModal! :AddEmployeeModalComponent;
   @ViewChild('DeleteModal') DeleteModal ! :DeleteEmployeeComponent;
@@ -55,7 +55,7 @@ export class EmployeesComponent implements OnInit{
   reload(reload:boolean){
     if(reload){
       this.searchText ="";
-      this.itemsPerPage = 10;
+      this.itemsPerPage = 5;
       this.currentPageIndex = 0;
       this.getAllEmployess();
 

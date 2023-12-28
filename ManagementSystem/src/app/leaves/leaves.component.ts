@@ -22,7 +22,7 @@ export class LeavesComponent implements OnInit{
   searchText = "";
   result : Leave[] = [];
   currentPageIndex = 0;
-  itemsPerPage: number = 10;
+  itemsPerPage: number = 5;
   lengthFilteredLeaves :number =0;
   numberOfPages = 0;
 
@@ -116,7 +116,7 @@ export class LeavesComponent implements OnInit{
     if(reload){
       this.selectedLeavetype = "";
       this.searchText ="";
-      this.itemsPerPage = 10;
+      this.itemsPerPage = 5;
       this.currentPageIndex = 0;
       this.onSearchInputChange();
     }

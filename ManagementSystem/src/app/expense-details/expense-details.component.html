@@ -1,2 +1,28 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="basic">
 
-{{expenseClaimId}}
+    <table  class=" table table-bordered table-striped">
+        <thead>
+        <tr>
+
+            <th>Expense Type</th>
+            <th>date</th>
+            <th>Description</th>
+            <th>Total</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let expense of expenseDetailsList">
+            <td>{{getExpeneTypesbyId(expense.expenseType)}}</td>
+            <td>{{expense.date}}</td>
+            <td>{{expense.description}}</td>
+            <td>{{expense.total}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

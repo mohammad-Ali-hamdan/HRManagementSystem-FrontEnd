@@ -9,7 +9,7 @@ import {listOfitems} from "./items";
 export class SidebarComponentComponent implements OnInit{
   isToggled : boolean = true;
   items: string[] =[];
-  itemSelected :string= "Employees";
+  itemSelected :string= "employees";
 
   ngOnInit():void{
     this.items = listOfitems;
