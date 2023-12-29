@@ -7,6 +7,7 @@ import {EmployeeServiceService} from "../employee-service.service";
 import {employee} from "../employees/employee";
 import {expenseClaimSubmit} from "../expenses/expenseClaimSubmit";
 
+
 @Component({
   selector: 'app-add-expense',
   templateUrl: './add-expense.component.html',
@@ -69,7 +70,6 @@ export class AddExpenseComponent implements OnInit{
         this.checkBeforeSubmit = false;
         this.expenseService.submitExpenseEntries(this.expensesEntry).subscribe((data)=>{
           this.expenseClaimId = data;
-          console.log(this.expenseClaimId);
           this.submitToClaims();
         });
 
@@ -101,6 +101,7 @@ export class AddExpenseComponent implements OnInit{
   }
   close(){ this.closeEvent.emit(true);}
   addExpenseEntry(){
+    console.log(this.convertNowDate() );
     if ( this.expenseType && this.expenseDate && this.expenseDescription &&  (!isNaN(+this.expenseTotal)) && (+this.expenseTotal>0) ) {//
 
       let expenseName  =  this.expenseTypes.find(expenseType => expenseType.name === this.expenseType)?.id;
@@ -113,6 +114,7 @@ export class AddExpenseComponent implements OnInit{
         description: this.expenseDescription,
         total: +this.expenseTotal
       };
+
 
        this.expensesEntry.push(expense);
 
@@ -149,7 +151,7 @@ export class AddExpenseComponent implements OnInit{
     if (date) {
       const parts = date.split('-');
       if (parts.length === 3) {
-        const formattedDate = `${parts[1]}/${parts[2]}/${parts[0]}`;
+        const formattedDate = `${parts[2]}/${parts[1]}/${parts[0]}`;
         return formattedDate;
       } else {
         console.error('Invalid date format:', date);
@@ -160,7 +162,18 @@ export class AddExpenseComponent implements OnInit{
   }
   convertNowDate(): string {
     const options: Intl.DateTimeFormatOptions = { day: '2-digit', month: '2-digit', year: 'numeric' };
-    return new Date().toLocaleDateString('en-US', options);
+    let date =  new Date().toLocaleDateString('en-US', options).toString();
+    if (date) {
+      const parts = date.split('/');
+      if (parts.length === 3) {
+        const formattedDate = `${parts[1]}/${parts[0]}/${parts[2]}`;
+        return formattedDate;
+      } else {
+        console.error('Invalid date format:', date);
+      }
+    }
+
+    return date;
   }
 
 
