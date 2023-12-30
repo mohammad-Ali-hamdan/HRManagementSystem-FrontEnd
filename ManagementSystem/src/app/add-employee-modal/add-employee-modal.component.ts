@@ -75,7 +75,14 @@ export class AddEmployeeModalComponent implements OnInit {
         this.employeeService.createEmployee(this.newEmployee ).subscribe(() =>{
           this.closeAddPopUp();
           this.closeEvent.emit(true);
-        });
+        },
+          (error) =>{
+            if (error.status === 404){
+              alert("Cannot Add this employee. Invalid Information .");
+            }
+          }
+
+        );
       }
       else if(this.functionality ==='EDIT')
       {
@@ -83,7 +90,14 @@ export class AddEmployeeModalComponent implements OnInit {
        this.employeeService.updateEmployee(this.newEmployee).subscribe(() =>{
          this.closeAddPopUp();
          this.closeEvent.emit(true);
-       });
+       },
+         (error) =>{
+           if (error.status === 404){
+             alert("Cannot update this employee. Invalid Information .");
+           }
+         }
+
+       );
       }
 
     }

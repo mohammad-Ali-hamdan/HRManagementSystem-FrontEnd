@@ -82,14 +82,27 @@ export class AddAndEditLeaveComponent implements OnInit{
         this.leaveService.addLeave(this.leave).subscribe(()=>{
           this.closePopUp();
           this.closeEvent.emit(true);
-        });
+        },
+          (error) =>{
+            if (error.status === 404){
+              alert("Cannot Add this leave. Invalid Information .");
+            }
+          }
+
+        );
       }
       if(this.functionality === "EDIT"){
         this.leaveService.updateLeave(this.leave).subscribe(()=>
         {
           this.closePopUp();
           this.closeEvent.emit(true);
-        })
+        },
+          (error) =>{
+            if (error.status === 404){
+              alert("Cannot update this leave. Invalid Information .");
+            }
+          }
+        )
 
       }
     }

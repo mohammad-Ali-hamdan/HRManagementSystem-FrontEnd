@@ -13,6 +13,8 @@
             <th>date</th>
             <th>Description</th>
             <th>Total</th>
+            <th>Delete</th>
+
 
         </tr>
         </thead>
@@ -22,7 +24,9 @@
             <td>{{expense.date}}</td>
             <td>{{expense.description}}</td>
             <td>{{expense.total}}</td>
+            <td><div id="trash" (click)="OnSelectTrash(expense.id)" class="trash glyphicon glyphicon-trash"></div></td>
         </tr>
         </tbody>
     </table>
 </div>
+<app-delete-expense-details #DeleteModal  (deleteEvent)="reload($event)" ></app-delete-expense-details>

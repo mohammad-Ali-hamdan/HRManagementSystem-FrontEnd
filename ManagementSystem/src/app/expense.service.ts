@@ -67,4 +67,8 @@ export class ExpenseService {
     return this.http.get(`${this.expenseEntry}/expensesEntryByClaimId/${id}`);
   }
 
+  deleteExpenseDetailsAndUpdateClaim(id:number):Observable<any>{
+    return this.http.delete(`${this.expenseEntry}/deleteEntryAndSubmitClaim/${id}` , this.httpOptions);
+  }
+
 }

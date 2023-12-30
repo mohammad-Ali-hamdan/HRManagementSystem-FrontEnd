@@ -118,7 +118,7 @@ export class LeavesComponent implements OnInit{
       this.searchText ="";
       this.itemsPerPage = 5;
       this.currentPageIndex = 0;
-      this.onSearchInputChange();
+      this.getAllLeaves();
     }
   }
   OnClickEditAdd(functionality:string , leave : Leave):void{

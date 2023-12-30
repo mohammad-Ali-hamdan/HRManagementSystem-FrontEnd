@@ -22,6 +22,11 @@ export class DeleteLeaveComponent implements OnInit{
         {
           this.closeDeletePopUp();
           this.deleteEvent.emit(true);
+        },
+        (error) =>{
+          if (error.status === 404){
+            alert("Cannot delete this leave. Invalid Information .");
+          }
         }
       );
     }

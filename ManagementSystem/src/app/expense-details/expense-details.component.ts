@@ -1,8 +1,10 @@
-import { Component , OnInit , Input , Output , EventEmitter} from '@angular/core';
+import {Component, OnInit, Input, Output, EventEmitter, ViewChild} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {ExpenseService} from "../expense.service";
 import {expenseEntry} from "../expenses/expenseEntry";
 import {expenseType} from "../expenses/expenseTypes";
+import {DeleteExpenseDetailsComponent} from "../delete-expense-details/delete-expense-details.component";
+
 
 @Component({
   selector: 'app-expense-details',
@@ -14,19 +16,32 @@ export class ExpenseDetailsComponent implements OnInit{
   expenseDetailsList :expenseEntry[] = [];
   expenseDetailEntry:expenseEntry = {id : 0 , date: '' , expenseType : 0 ,expenseClaim : 0,description: '', total: 0};
   expenseTypes: expenseType[]=[];
-
+  @ViewChild('DeleteModal') DeleteModal ! :DeleteExpenseDetailsComponent;
   ngOnInit() {
     this.getExpeseDetails();
     this.getExpensetypes();
   }
-  constructor(private route : ActivatedRoute , private expenseService: ExpenseService) {
+  constructor(private route : ActivatedRoute , private expenseService: ExpenseService ) {
   }
 
+  reload(reload:boolean){
+    if(reload){
+      this.getExpeseDetails();
+    }
+  }
+  OnSelectTrash(id:number):void{
+
+    this.DeleteModal.openModal(id);
+
+
+  }
 
   getExpeseDetails(){
     this.expenseClaimId  = Number(this.route.snapshot.paramMap.get('id'));
     this.expenseService.getExpensesEntriesByClaimId( Number(this.route.snapshot.paramMap.get('id'))).subscribe(
-        (data) => {this.expenseDetailsList = data;}
+        (data) => { this.expenseDetailsList = data;
+
+        }
     );
   }
   getExpensetypes(){

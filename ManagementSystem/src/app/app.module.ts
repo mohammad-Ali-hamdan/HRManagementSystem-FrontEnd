@@ -18,6 +18,7 @@ import {DatePipe} from "@angular/common";
 import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpenseDetailsComponent } from './expense-details/expense-details.component';
 import { AddExpenseComponent } from './add-expense/add-expense.component';
+import { DeleteExpenseDetailsComponent } from './delete-expense-details/delete-expense-details.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { AddExpenseComponent } from './add-expense/add-expense.component';
     AddAndEditLeaveComponent,
     ExpensesComponent,
     ExpenseDetailsComponent,
-    AddExpenseComponent
+    AddExpenseComponent,
+    DeleteExpenseDetailsComponent
   ],
   imports: [
     BrowserModule,
