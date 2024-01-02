@@ -21,6 +21,7 @@
         <th>Name</th>
         <th>Email</th>
         <th>Address</th>
+        <th>Department</th>
         <th> Edit - Delete </th>
       </tr>
       </thead>
@@ -30,6 +31,7 @@
         <td>{{ employee.name }}</td>
         <td>{{ employee.email }}</td>
         <td>{{ employee.address }}</td>
+        <td>{{departmentById(employee.departmentId)}}</td>
         <td>
           <div id="edit" (click)="OnClickAddEdit('EDIT' , employee)" class="glyphicon glyphicon-edit"></div>
           <div id="trash" (click)="OnSelectTrash(employee.id)" class="trash glyphicon glyphicon-trash"></div>

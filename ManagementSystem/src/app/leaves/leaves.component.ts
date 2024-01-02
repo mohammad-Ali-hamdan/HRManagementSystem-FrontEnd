@@ -86,21 +86,26 @@ export class LeavesComponent implements OnInit{
     let FilteredEmployessIds  : number[] = [];
     this.employees.forEach(employee => {
       if(employee.name.toLowerCase().includes(lowerCaseSearchText)){FilteredEmployessIds.push(employee.id)}
-    })
-    let leaveId = this.LeaveTypes.find(leave => leave.name === this.selectedLeavetype)?.id;
-    let leavetypeId = (leaveId !==undefined) ? leaveId : -1;
+    });
+    let FilteredLeaveTypeIds : number[] = [];
+    this.LeaveTypes.forEach(leaveType => {
+      if(leaveType.name.toLowerCase().includes(lowerCaseSearchText)){FilteredLeaveTypeIds.push(leaveType.id)}
+    });
+    //let leaveId = this.LeaveTypes.find(leave => leave.name === this.selectedLeavetype)?.id;
+    //let leavetypeId = (leaveId !==undefined) ? leaveId : -1;
     let filteredLeaves =  this.Leaves.filter(leave => {
       if(lowerCaseSearchText ===""){
-        if(leavetypeId === -1){return true;}
-        else{return leave.leavetype === leavetypeId;}
+        return true;
+        //if(leavetypeId === -1){return true;}
+        //else{return leave.leavetype === leavetypeId;}
       }
       else {
-        if(leavetypeId === -1) {
-          return FilteredEmployessIds.includes(leave.employee)
-        }
-        else {
-          return leave.leavetype === leavetypeId && FilteredEmployessIds.includes(leave.employee);
-        }
+        //if(leavetypeId === -1) {
+          return (FilteredEmployessIds.includes(leave.employee) || (FilteredLeaveTypeIds.includes(leave.leavetype)))
+        //}
+        //else {
+         // return leave.leavetype === leavetypeId && FilteredEmployessIds.includes(leave.employee);
+        //}
         }
     })
     this.lengthFilteredLeaves = filteredLeaves.length;

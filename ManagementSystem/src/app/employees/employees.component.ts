@@ -3,6 +3,7 @@ import {EmployeeServiceService} from "../employee-service.service";
 import {employee} from "./employee";
 import {AddEmployeeModalComponent} from "../add-employee-modal/add-employee-modal.component";
 import {DeleteEmployeeComponent} from "../delete-employee/delete-employee.component";
+import {Department} from "../add-employee-modal/Department";
 
 @Component({
   selector: 'app-employees',
@@ -17,13 +18,40 @@ export class EmployeesComponent implements OnInit{
   numberOfPages=0;
   itemsPerPage: number = 5;
   lengthFilteredEmployees :number =0;
+  nameOfDepartments : string[]=[];
+  Departments :Department[]=[];
   @ViewChild('AddModal') AddModal! :AddEmployeeModalComponent;
   @ViewChild('DeleteModal') DeleteModal ! :DeleteEmployeeComponent;
   constructor(private employeeService : EmployeeServiceService) {
   }
   ngOnInit():void{
     this.getAllEmployess();
-    //console.log(this.employees);
+    this.getDepartments();
+
+  }
+
+  departmentById(id:number):string{
+    let DepartmentName  = this.Departments.find(item=>item.id === id)?.name;
+    if(DepartmentName !==undefined){
+      return DepartmentName;
+    }
+    else return "";
+  }
+
+  getDepartments():void{
+    this.employeeService.getAllDepartment().subscribe(data =>
+      {
+
+        this.Departments = data;
+
+      },
+      (error) => {
+        console.error('Error fetching employees', error);
+      }
+
+    );
+
+
   }
 
   getAllEmployess():void{

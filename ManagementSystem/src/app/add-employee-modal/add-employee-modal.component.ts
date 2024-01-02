@@ -131,9 +131,7 @@ export class AddEmployeeModalComponent implements OnInit {
 
 
   storeDep():void{
-
     this.Departments.forEach(data => this.nameOfDepartments.push(data.name));
-    //console.log();
-    //alert(this.Departments.length);
+
   }
 }
