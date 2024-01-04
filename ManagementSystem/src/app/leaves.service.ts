@@ -3,6 +3,7 @@ import {HttpClient , HttpHeaders} from "@angular/common/http";
 import { catchError, map, tap } from 'rxjs/operators';
 import {Observable , of} from "rxjs";
 import {Leave} from "./leaves/Leave";
+import {pageableComponent} from "./pageable-leave/pageableComponent";
 
 @Injectable({
   providedIn: 'root'
@@ -47,6 +48,11 @@ export class LeavesService {
       "leave":0}
 
     return this.http.put<any>('http://localhost:8081/apileavedetails/listpagination' , object , this.httpOptions);
+  }
+
+  pageacleComponent(object : pageableComponent):Observable<any>{
+
+    return this.http.put<any>('http://localhost:8081/apileavedetails/pageableComponent' , object , this.httpOptions);
   }
 
 

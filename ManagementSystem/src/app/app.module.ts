@@ -19,6 +19,7 @@ import { ExpensesComponent } from './expenses/expenses.component';
 import { ExpenseDetailsComponent } from './expense-details/expense-details.component';
 import { AddExpenseComponent } from './add-expense/add-expense.component';
 import { DeleteExpenseDetailsComponent } from './delete-expense-details/delete-expense-details.component';
+import { PageableLeaveComponent } from './pageable-leave/pageable-leave.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { DeleteExpenseDetailsComponent } from './delete-expense-details/delete-e
     ExpensesComponent,
     ExpenseDetailsComponent,
     AddExpenseComponent,
-    DeleteExpenseDetailsComponent
+    DeleteExpenseDetailsComponent,
+    PageableLeaveComponent
   ],
   imports: [
     BrowserModule,

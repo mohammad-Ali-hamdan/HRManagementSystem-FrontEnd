@@ -5,6 +5,7 @@ import {SidebarComponentComponent} from "./sidebar-component/sidebar-component.c
 import {ExpenseDetailsComponent} from "./expense-details/expense-details.component";
 import {LeavesComponent} from "./leaves/leaves.component";
 import {ExpensesComponent} from "./expenses/expenses.component";
+import {PageableLeaveComponent} from "./pageable-leave/pageable-leave.component";
 
 const routes: Routes = [
     //{path:'employees' , component: EmployeesComponent},
@@ -14,6 +15,7 @@ const routes: Routes = [
   { path: 'leaves', component: LeavesComponent },
   { path: 'expenses', component: ExpensesComponent },
   {path: 'details/:id' , component: ExpenseDetailsComponent},
+  {path : 'pageableComponent' , component: PageableLeaveComponent },
   {path : '' , redirectTo:'/employees' , pathMatch:'full'}
 ];
 

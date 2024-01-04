@@ -4,13 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b345a77-0c71-49c2-84e3-f2ba98d0ee07" name="Changes" comment="expenses-details-updated2">
+    <list default="true" id="4b345a77-0c71-49c2-84e3-f2ba98d0ee07" name="Changes" comment="expenses-details-updated3">
+      <change afterPath="$PROJECT_DIR$/ManagementSystem/src/app/pageable-leave/pageableComponent.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/add-employee-modal/add-employee-modal.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/add-employee-modal/add-employee-modal.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/employees/employees.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/employees/employees.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/employees/employees.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/employees/employees.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/leaves/leaves.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/leaves/leaves.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/leaves/leaves.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/leaves/leaves.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/app-routing.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/leaves.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/leaves.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +95,7 @@
       <workItem from="1703608213920" duration="46237000" />
       <workItem from="1703912096352" duration="12184000" />
       <workItem from="1703945172770" duration="583000" />
-      <workItem from="1704179105464" duration="5990000" />
+      <workItem from="1704179105464" duration="17826000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit-employee Section">
       <option name="closed" value="true" />
@@ -146,7 +145,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703939213229</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="expenses-details-updated3">
+      <option name="closed" value="true" />
+      <created>1704194902686</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1704194902686</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +194,7 @@
     <MESSAGE value="expenses-details" />
     <MESSAGE value="expenses-details-updated" />
     <MESSAGE value="expenses-details-updated2" />
-    <option name="LAST_COMMIT_MESSAGE" value="expenses-details-updated2" />
+    <MESSAGE value="expenses-details-updated3" />
+    <option name="LAST_COMMIT_MESSAGE" value="expenses-details-updated3" />
   </component>
 </project>
