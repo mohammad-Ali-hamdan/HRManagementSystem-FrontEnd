@@ -57,7 +57,7 @@
           <h5>Expense List:</h5>
           <ul>
             <li *ngFor="let expense of expensesEntry">
-              Date: {{ expense.date }}, Description: {{ expense.description }}, Total: {{ expense.total }}
+              Date: {{ expense.date }}, Description: {{ expense.description }}, Total: {{ expense.total }}  <div id="trash" (click)="OnSelectTrash(expense)" class="trash glyphicon glyphicon-trash"></div>
             </li>
           </ul>
         </div>

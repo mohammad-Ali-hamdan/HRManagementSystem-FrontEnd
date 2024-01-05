@@ -9,12 +9,14 @@ import {ExpenseService} from "../expense.service";
 export class DeleteExpenseDetailsComponent implements OnInit{
   deleteExpenseDetails: number = 0;
   @Output() deleteEvent = new EventEmitter<boolean>();
+  deleteFailure:boolean = false;
   ngOnInit() {
   }
   constructor(private expenseService: ExpenseService) {
   }
 
   closeDeletePopUp(): void {
+    this.deleteFailure = false;
     const DeleteModal = document.getElementById('DeleteModal');
     if (DeleteModal != null) {
       DeleteModal.style.display = 'none';
@@ -25,12 +27,14 @@ export class DeleteExpenseDetailsComponent implements OnInit{
   deleteExpenseDetailsAndUpdateClaim(): void {
     this.expenseService.deleteExpenseDetailsAndUpdateClaim(this.deleteExpenseDetails).subscribe(
       () => {
+        this.deleteFailure = false;
         this.closeDeletePopUp();
         this.deleteEvent.emit(true);
       },
       (error)=>{
         if (error.status === 404) {
-          alert("Failed to delete . Invalid Information");
+          this.deleteFailure = true;
+          //alert("Failed to delete . Invalid Information");
         }
       }
     );

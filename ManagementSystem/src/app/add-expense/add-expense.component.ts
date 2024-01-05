@@ -101,7 +101,7 @@ export class AddExpenseComponent implements OnInit{
   }
   close(){ this.closeEvent.emit(true);}
   addExpenseEntry(){
-    console.log(this.convertNowDate() );
+    //console.log(this.convertNowDate() );
     if ( this.expenseType && this.expenseDate && this.expenseDescription &&  (!isNaN(+this.expenseTotal)) && (+this.expenseTotal>0) ) {//
 
       let expenseName  =  this.expenseTypes.find(expenseType => expenseType.name === this.expenseType)?.id;
@@ -176,6 +176,9 @@ export class AddExpenseComponent implements OnInit{
     return date;
   }
 
+  OnSelectTrash(expenseToDelete:any){
+    this.expensesEntry = this.expensesEntry.filter(expense => expense !== expenseToDelete);
 
+  }
 
 }

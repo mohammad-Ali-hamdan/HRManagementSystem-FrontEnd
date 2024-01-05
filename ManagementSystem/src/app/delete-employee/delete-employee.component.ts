@@ -11,6 +11,7 @@ import {EmployeeServiceService} from "../employee-service.service";
 })
 export class DeleteEmployeeComponent implements OnInit{
   deleteEmployee: number = 0;
+  deleteFailure:boolean = false;
   @Output() deleteEvent = new EventEmitter<boolean>();
 
   ngOnInit(){
@@ -20,6 +21,7 @@ export class DeleteEmployeeComponent implements OnInit{
   }
 
   closeDeletePopUp(): void {
+    this.deleteFailure = false;
     const DeleteModal = document.getElementById('DeleteModal');
     if (DeleteModal != null) {
       DeleteModal.style.display = 'none';
@@ -30,12 +32,15 @@ export class DeleteEmployeeComponent implements OnInit{
   deleteEmp(): void {
     this.employeeService.deleteEmployee(this.deleteEmployee).subscribe(
       () => {
+        this.deleteFailure = false;
         this.closeDeletePopUp();
         this.deleteEvent.emit(true);
+
       },
       (error)=>{
         if (error.status === 404) {
-          alert("Cannot delete this employee. The employee associated with records in other tables .");
+          this.deleteFailure = true;
+          //alert("Cannot delete this employee. The employee associated with records in other tables .");
         }
       }
     );

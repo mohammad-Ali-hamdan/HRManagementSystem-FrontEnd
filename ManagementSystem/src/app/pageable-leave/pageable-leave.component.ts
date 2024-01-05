@@ -84,7 +84,7 @@ export class PageableLeaveComponent implements OnInit{
     const lowerCaseSearchText = this.searchText.trim().toLowerCase();
     let pageableObject: pageableComponent = {
       pageSize: +this.itemsPerPage ,
-      pageNumber: this.currentPageIndex,
+      pageNumber: lowerCaseSearchText==="" ? this.currentPageIndex : 0,
       text: lowerCaseSearchText
     };
     this.pageableComponent(pageableObject);

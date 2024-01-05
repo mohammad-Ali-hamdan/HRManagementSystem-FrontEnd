@@ -4,12 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4b345a77-0c71-49c2-84e3-f2ba98d0ee07" name="Changes" comment="expenses-details-updated3">
-      <change afterPath="$PROJECT_DIR$/ManagementSystem/src/app/pageable-leave/pageableComponent.ts" afterDir="false" />
+    <list default="true" id="4b345a77-0c71-49c2-84e3-f2ba98d0ee07" name="Changes" comment="expenses-details-updated5">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/app-routing.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/app-routing.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/app.module.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/leaves.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/leaves.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/add-expense/add-expense.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/add-expense/add-expense.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/add-expense/add-expense.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/add-expense/add-expense.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/delete-employee/delete-employee.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/delete-employee/delete-employee.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/delete-employee/delete-employee.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/delete-employee/delete-employee.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/delete-employee/delete-employee.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/delete-employee/delete-employee.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/delete-expense-details/delete-expense-details.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/delete-expense-details/delete-expense-details.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/delete-expense-details/delete-expense-details.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/delete-expense-details/delete-expense-details.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/delete-expense-details/delete-expense-details.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/delete-expense-details/delete-expense-details.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/delete-leave/delete-leave.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/delete-leave/delete-leave.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/delete-leave/delete-leave.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/delete-leave/delete-leave.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/delete-leave/delete-leave.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/delete-leave/delete-leave.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/pageable-leave/pageable-leave.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/pageable-leave/pageable-leave.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ManagementSystem/src/app/sidebar-component/sidebar-component.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/ManagementSystem/src/app/sidebar-component/sidebar-component.component.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +104,7 @@
       <workItem from="1703608213920" duration="46237000" />
       <workItem from="1703912096352" duration="12184000" />
       <workItem from="1703945172770" duration="583000" />
-      <workItem from="1704179105464" duration="17826000" />
+      <workItem from="1704179105464" duration="27040000" />
     </task>
     <task id="LOCAL-00001" summary="first-commit-employee Section">
       <option name="closed" value="true" />
@@ -153,7 +162,23 @@
       <option name="project" value="LOCAL" />
       <updated>1704194902686</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="expenses-details-updated4">
+      <option name="closed" value="true" />
+      <created>1704378224458</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1704378224458</updated>
+    </task>
+    <task id="LOCAL-00009" summary="expenses-details-updated5">
+      <option name="closed" value="true" />
+      <created>1704378305870</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1704378305870</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,6 +220,8 @@
     <MESSAGE value="expenses-details-updated" />
     <MESSAGE value="expenses-details-updated2" />
     <MESSAGE value="expenses-details-updated3" />
-    <option name="LAST_COMMIT_MESSAGE" value="expenses-details-updated3" />
+    <MESSAGE value="expenses-details-updated4" />
+    <MESSAGE value="expenses-details-updated5" />
+    <option name="LAST_COMMIT_MESSAGE" value="expenses-details-updated5" />
   </component>
 </project>

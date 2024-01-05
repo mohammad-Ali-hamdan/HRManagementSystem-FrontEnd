@@ -1,3 +1,8 @@
 .basicFont{
   font-size: small;
 }
+#deleteFailure{
+  color: red;
+  padding-left: 3px;
+
+}

@@ -17,7 +17,7 @@
           <p>Are you sure you want to delete?</p>
         </div>
 
-
+        <p *ngIf="deleteFailure"  id="deleteFailure">Cannot delete this leave. Invalid Information</p>
         <!-- Modal footer -->
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" (click)="deleteLeave()">Yes</button>
